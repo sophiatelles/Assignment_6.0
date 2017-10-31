@@ -1,0 +1,9 @@
+base
+knitr
+googleVis
+gudatavizfa17
+dplyr
+tidyr
+devtools
+ggplot2
+bindrcpp

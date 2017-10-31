@@ -1,0 +1,189 @@
+---
+title: "Assignment 6"
+author: "Sophia Telles & Samantha Driscoll"
+date: "October 23, 2017"
+output: 
+  html_document:
+    self_contained: no
+
+---
+
+```{r setOptions, message=FALSE,echo=FALSE,warning=FALSE}
+suppressPackageStartupMessages(library(knitr)) 
+suppressPackageStartupMessages(library(googleVis)) 
+library(gudatavizfa17)
+library(dplyr)
+library(tidyr)
+library(devtools)
+library(ggplot2)
+
+opts_chunk$set(cache=TRUE, message=FALSE,size = 'footnotesize',warning=FALSE)
+op <- options(gvis.plot.tag='chart') 
+```
+
+## 1. Please look at relationships between different variables and identify variables that appear to be strongly related to having a higher rank in the survey. (10 points)
+
+
+```{r}
+bcities[c("City")][is.na(bcities[c("City")])]<- "Washington" 
+
+```
+
+
+```{r results='asis'}
+Table <- gvisTable(bcities,formats=list(Population="#,###"),options=list(page='enable',width=1000,height=400))
+plot(Table)
+```
+
+### Rank vs Population
+```{r results='asis'}
+Line1 <- gvisLineChart(bcities,"City",c("Population","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Population'},{title:'Rank'}]",width=750,height=500))
+plot(Line1)
+```
+
+The correlation between Rank of the City (#1 being the best ranking city and #50 being the worst ranking city) and population of the city is not very high. This is clear because the line representing "Rank" is constant (because the variable is ordinal) but the Population fluctuates randomly across the graph. There is no clear correlation between rank and population. 
+
+### Rank vs Bars
+```{r results='asis'}
+Line2 <- gvisLineChart(bcities,"City",c("Bars","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Bars'},{title:'Rank'}]",width=750,height=500))
+plot(Line2)
+```
+
+Rank and Bars don't seem to have a strong correlation to each other either, as Seattle is #2 but only has 219 bars. However, bars, restaurants and population seem to have a similar patter of fluctuation, so we decided to compare those two variables to find out if that. So we decided to graph them below and see:
+
+### Bars vs Population
+```{r results='asis'}
+Line12 <- gvisLineChart(bcities,"City",c("Bars","Population"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Bars'},{title:'Population'}]",width=750,height=500))
+plot(Line12)
+```
+
+### Rank vs Restaurants
+```{r results='asis'}
+Line3 <- gvisLineChart(bcities,"City",c("Restaurants","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Restaurants'},{title:'Rank'}]",width=750,height=500))
+plot(Line3)
+```
+
+### Restaurants vs Population 
+```{r results='asis'}
+Line12 <- gvisLineChart(bcities,"City",c("Restaurants","Population"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Restaurants'},{title:'Population'}]",width=750,height=500))
+plot(Line12)
+```
+
+The two variables restaurants and population have a high correlation, which only makes sense as more people naturally mean a greater demand for food. However, these variables don't have a strong effect on the rank. 
+
+### Rank vs Museums
+```{r results='asis'}
+Line4 <- gvisLineChart(bcities,"City",c("Museums","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Museums'},{title:'Rank'}]",width=750,height=500))
+plot(Line4)
+```
+
+No visible correlation. 
+
+### Ranks vs Libraries
+```{r results='asis'}
+Line5 <- gvisLineChart(bcities,"City",c("Libraries","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Libraries'},{title:'Rank'}]",width=750,height=500))
+plot(Line5)
+```
+
+No visible correlation.
+
+### Rank vs Pro Sport Teams
+```{r results='asis'}
+Line6 <- gvisLineChart(bcities,"City",c("Pro.Sports.Teams","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Pro Sports Teams'},{title:'Rank'}]",width=750,height=500))
+plot(Line6)
+```
+
+Rank and Pro Sports Teams shows a very interesting graph with high fluctuations, however it does not depict a strong correlation between the two variables.
+
+### Rank vs Park Acres per 1000 Residents
+```{r results='asis'}
+Line7 <- gvisLineChart(bcities,"City",c("Park.acres.per.1000.residents","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Park Acres per 1000 Residents'},{title:'Rank'}]",width=750,height=500))
+plot(Line7)
+```
+
+The amount of park acres per 1000 residents shows us no correlation to rank. 
+
+### Rank vs Colleges
+```{r results='asis'}
+Line8 <- gvisLineChart(bcities,"City",c("Colleges","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Colleges'},{title:'Rank'}]",width=750,height=500))
+plot(Line8)
+```
+
+Colleges and Rank: no correlation. 
+
+### Rank vs Percent with Graduate Degree
+```{r results='asis'}
+Line9 <- gvisLineChart(bcities,"City",c("Percent.with.Graduate.Degree","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Percent with Graduate Degree'},{title:'Rank'}]",width=750,height=500))
+plot(Line9)
+```
+
+### Rank vs Median household income
+```{r results='asis'}
+Line10 <- gvisLineChart(bcities,"City",c("Median.household.income","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Median Household Income'},{title:'Rank'}]",width=750,height=500))
+plot(Line10)
+```
+
+Finally we see some amount of correlation between rank and percent of population with a graduate degree. This can be seen through the upward trend of the line depicting percent of population with a graduate degree, and how it gets higher as the rank gets closer to #1, with a few outliers. This could be due to the fact that people with graduate degrees often seek high paying jobs with well-established or growing companies, making these areas more prestigious and wealthy. When people in a certain city have more money, then the city tends to have nicer places to eat or shop, and a cleaner city all together. This also explains why the following graph comparing rank and median household income is similar to the graph above. 
+
+### Rank vs Percent Unemployed
+```{r results='asis'}
+Line11 <- gvisLineChart(bcities,"City",c("Percent.unemployed","Rank"),options=list(series="[{targetAxisIndex:0},{targetAxisIndex:1}]",vAxes="[{title:'Percent Unemployed'},{title:'Rank'}]",width=750,height=500))
+plot(Line11)
+```
+
+It doesn't seem that rank and unemployment rate have a clear correlation. However, it seems that it would have a high correlation to people with graduate degrees. 
+
+### Graduate Degree GeoChart
+Please allow for city markers to load. 
+```{r  results='asis'}
+GeoCities <- gvisGeoChart(bcities,locationvar = "City", sizevar = "Percent.with.Graduate.Degree",options=list(region="US", resolution = "provinces", width=1000,height=400,displayMode="markers"))
+plot(GeoCities)
+```
+
+Since graduate degrees had the highest correlation, we decided to make a geoChart showing the amount of graduate degrees by state. This graph shows us that California, Texas, and then states in the Midwest and East Coast had the cities with the highest percentages of graduate degrees. 
+
+## 2. Plot the cities on a map of the US. (5 points)
+Please allow for city markers to load.
+
+```{r  results='asis'}
+GeoCities <- gvisGeoChart(bcities,locationvar = "City", sizevar = "Population",options=list(region="US", resolution = "provinces", width=1000,height=400,displayMode="markers"))
+plot(GeoCities)
+```
+
+For this map graph, we used markers, which allowed us to identify the city within the exact location. The cities with higher populations appear to be near water, which can stem from many factors but is likely heavily influenced by immigration. We encountered one limitation with this chart, being that it was not able to identify "Washington" as "Washington D.C.". Instead it placed the marker in Washington state. 
+
+## 3. Identify the States in which these cities lie and then develop a choropleth that colors different states based on the number of cities that are present in each State. (5 points)
+
+```{r}
+Ccount=bcities%>%group_by(City)%>%summarize(number=length(City))
+```
+
+```{r}
+Ccount$States <-1:50
+```
+
+```{r}
+Ccount$States <- c(1:50)
+Ccount$States=recode(1:50, "Alaska","Washington DC", "Georgia", "Texas","Maryland", "Massachusets", "North Carolina", "Maryland", "Illinois", "Ohio", "Ohio", "Colorado","Ohio", "Texas", "Colorado", "Hawaii", "Texas", "Indiana", "Missouri", "Kentucky", "Nebraska", "California", "Wisconsin","Wisconsin", "Minnesota", "Tennesee", "Louisiana", "New York", "California", "Oklahoma","Nebraska", "Pennsylvania", "Arizona", "Pennsylvania", "Oregon", "North Carolina", "Nevada", "New York", "Texas", "California", "California", "California", "Arizona", "Washington", "Missouri", "Minnesota", "Florida", "Oklahoma", "Virginia", "Washington DC")
+```
+
+```{r}
+Citycount=Ccount%>%group_by(States)%>%summarize(number=length(City))
+```
+
+```{r results='asis'}
+Numcities <- gvisGeoChart(Citycount, "States", "number",
+                          options=list(region="US", displayMode="regions", resolution="provinces",width=1000, height=400))
+plot(Numcities)
+```
+
+This map shows us that California and Texas have the most cities within the "top 50 cities" list, having 5 and 4 cities, respectively. It also seems that states in the Midwest and east coast have a couple more cities than other regions, which one could infer means that these are more popular regions of the United States. 
+
+## Conclusion:
+ 
+It seems that the cities that had the highest amount of graduate degrees and the median household income had a strong correlation to the rank of the city. The regions with the highest amount of ranking cities were in the Midwest and East Cost, and then in California. There were also high percentages in Seattle and Portland. 
+ 
+Factors such as restaurants, bars, and other attractions had little to do with the ranking of the city, because if you have a low household income, it's unlikely that you frequent these locations. 
+ 
+Some of the limitations we had in this assignment included: Washington D.C. appearing as a city in Washington State rather than a city in D.C. Also, the inability to find a graph that would better shows the correlations. We felt that the line graph was effective overall, but we could have found a graph type that would display an ordinal variable such as "Rank" more clearly. 
+

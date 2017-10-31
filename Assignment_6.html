@@ -1,0 +1,6308 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Sophia Telles &amp; Samantha Driscoll" />
+
+<meta name="date" content="2017-10-23" />
+
+<title>Assignment 6</title>
+
+<script src="Assignment_6_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Assignment_6_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Assignment_6_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Assignment_6_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Assignment_6_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Assignment_6_files/navigation-1.1/tabsets.js"></script>
+<link href="Assignment_6_files/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="Assignment_6_files/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Assignment 6</h1>
+<h4 class="author"><em>Sophia Telles &amp; Samantha Driscoll</em></h4>
+<h4 class="date"><em>October 23, 2017</em></h4>
+
+</div>
+
+
+<div id="please-look-at-relationships-between-different-variables-and-identify-variables-that-appear-to-be-strongly-related-to-having-a-higher-rank-in-the-survey.-10-points" class="section level2">
+<h2>1. Please look at relationships between different variables and identify variables that appear to be strongly related to having a higher rank in the survey. (10 points)</h2>
+<pre class="r"><code>bcities[c(&quot;City&quot;)][is.na(bcities[c(&quot;City&quot;)])]&lt;- &quot;Washington&quot; </code></pre>
+<pre class="r"><code>Table &lt;- gvisTable(bcities,formats=list(Population=&quot;#,###&quot;),options=list(page=&#39;enable&#39;,width=1000,height=400))
+plot(Table)</code></pre>
+<!-- Table generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:28 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataTableID19845af1f73 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+50,
+3811518,
+393,
+8305,
+106,
+108,
+5,
+6,
+30,
+6.7,
+56558,
+11.1,
+-118.2436849,
+34.0522342
+],
+[
+"Anchorage",
+49,
+297018,
+63,
+682,
+12,
+14,
+0,
+1753,
+2,
+7.5,
+85554,
+6.4,
+-149.9002778,
+61.2180556
+],
+[
+"Omaha",
+48,
+416855,
+206,
+908,
+12,
+15,
+1,
+21,
+7,
+7.1,
+64026,
+4.6,
+-95.9979883,
+41.2523634
+],
+[
+"St. Louis",
+47,
+304219,
+143,
+795,
+32,
+23,
+3,
+10,
+6,
+7.8,
+44360,
+9.8,
+-90.1994042,
+38.6270025
+],
+[
+"Cleveland",
+46,
+396441,
+204,
+866,
+23,
+51,
+3,
+7,
+8,
+4.5,
+35685,
+7.9,
+-81.6943605,
+41.49932
+],
+[
+"Chesapeake",
+45,
+223454,
+10,
+451,
+1,
+8,
+0,
+252,
+11,
+6.8,
+80695,
+6.3,
+-76.2874927,
+36.7682088
+],
+[
+"Phoenix",
+44,
+1418687,
+179,
+2384,
+22,
+44,
+5,
+28,
+11,
+6.2,
+60366,
+7.3,
+-112.0740373,
+33.4483771
+],
+[
+"Scottsdale",
+43,
+214770,
+64,
+680,
+5,
+7,
+1,
+72,
+2,
+10.8,
+99130,
+7.3,
+-111.9260519,
+33.4941704
+],
+[
+"Reno",
+42,
+225561,
+83,
+596,
+10,
+14,
+1,
+11,
+3,
+7.1,
+64507,
+11.7,
+-119.8138027,
+39.5296329
+],
+[
+"Dallas ",
+41,
+1199739,
+249,
+2808,
+26,
+43,
+2,
+23,
+10,
+5.9,
+44838,
+7.9,
+-96.8004511,
+32.7801399
+],
+[
+"Virginia Beach",
+40,
+438243,
+24,
+1144,
+10,
+18,
+0,
+68,
+3,
+7.3,
+76637,
+5.7,
+-75.977985,
+36.8529263
+],
+[
+"Charlotte",
+39,
+745596,
+121,
+1685,
+16,
+26,
+3,
+20,
+8,
+8.6,
+65622,
+9.9,
+-80.8431267,
+35.2270869
+],
+[
+"Tulsa",
+38,
+395176,
+109,
+956,
+15,
+21,
+1,
+19,
+6,
+6.2,
+53059,
+5.5,
+-95.992775,
+36.1539816
+],
+[
+"Indianapolis",
+37,
+831943,
+195,
+1679,
+21,
+35,
+4,
+14,
+11,
+6.5,
+56862,
+8.9,
+-86.158068,
+39.768403
+],
+[
+"Colorado Springs",
+36,
+421350,
+69,
+901,
+16,
+10,
+1,
+30,
+9,
+9,
+70437,
+9.9,
+-104.8213634,
+38.8338816
+],
+[
+"Tampa ",
+35,
+340509,
+91,
+1114,
+18,
+19,
+4,
+10,
+6,
+7.5,
+55039,
+8.8,
+-82.4571776,
+27.950575
+],
+[
+"Lincoln",
+35,
+259068,
+74,
+523,
+22,
+18,
+0,
+25,
+3,
+7.3,
+67093,
+3.7,
+-96.675278,
+40.809722
+],
+[
+"San Jose",
+33,
+956368,
+68,
+1578,
+12,
+31,
+4,
+17,
+4,
+9.8,
+92539,
+8.7,
+-121.8949555,
+37.3393857
+],
+[
+"Rochester",
+32,
+213178,
+78,
+502,
+14,
+17,
+3,
+7,
+4,
+7.8,
+37111,
+8.4,
+-77.6109219,
+43.16103
+],
+[
+"Oakland",
+31,
+401036,
+67,
+894,
+14,
+27,
+3,
+13,
+7,
+11.2,
+59097,
+9.5,
+-122.2711137,
+37.8043637
+],
+[
+"San Antonio",
+30,
+1365256,
+345,
+2914,
+31,
+36,
+3,
+17,
+7,
+5.5,
+54444,
+7.4,
+-98.4936282,
+29.4241219
+],
+[
+"Baltimore",
+29,
+612701,
+243,
+1590,
+45,
+36,
+2,
+8,
+11,
+8.5,
+50492,
+11.1,
+-76.6121893,
+39.2903848
+],
+[
+"Chicago",
+28,
+2679998,
+807,
+6438,
+76,
+99,
+8,
+4,
+42,
+9.3,
+56121,
+9.8,
+-87.6297982,
+41.8781136
+],
+[
+"Arlington",
+27,
+208143,
+12,
+575,
+8,
+12,
+0,
+8,
+5,
+27.2,
+132580,
+3.7,
+-97.1080656,
+32.735687
+],
+[
+"Milwaukee",
+26,
+593545,
+390,
+947,
+20,
+30,
+2,
+16,
+12,
+5.4,
+44113,
+9.4,
+-87.9064736,
+43.0389025
+],
+[
+"Lexington",
+25,
+299520,
+49,
+658,
+17,
+14,
+1,
+21,
+3,
+11,
+69697,
+6.5,
+-84.5037164,
+38.0405837
+],
+[
+"Philadelphia",
+24,
+1522648,
+400,
+3821,
+91,
+100,
+5,
+7,
+18,
+6.4,
+48330,
+10.9,
+-75.163789,
+39.952335
+],
+[
+"Oklahoma City",
+23,
+588053,
+102,
+1251,
+29,
+13,
+2,
+39,
+6,
+6,
+58370,
+5,
+-97.5164276,
+35.4675602
+],
+[
+"Houston",
+22,
+2131940,
+549,
+5549,
+58,
+63,
+6,
+22,
+17,
+6.6,
+48889,
+7.6,
+-95.3693896,
+29.7601927
+],
+[
+"Cincinatti",
+21,
+292050,
+105,
+600,
+18,
+35,
+2,
+21,
+8,
+8.9,
+49048,
+7.2,
+-84.5120196,
+39.1031182
+],
+[
+"Columbus ",
+20,
+796520,
+249,
+1656,
+13,
+27,
+2,
+15,
+8,
+7.8,
+54763,
+6.5,
+-82.9987942,
+39.9611755
+],
+[
+"Honolulu",
+19,
+399124,
+105,
+1296,
+31,
+38,
+0,
+7,
+10,
+8.9,
+78233,
+6.4,
+-157.8583333,
+21.3069444
+],
+[
+"Raleigh",
+18,
+405462,
+93,
+1007,
+15,
+17,
+1,
+31,
+5,
+11.4,
+76255,
+7.8,
+-78.6381787,
+35.7795897
+],
+[
+"Madison",
+17,
+231999,
+86,
+595,
+12,
+33,
+0,
+22,
+2,
+15.6,
+78187,
+5.4,
+-89.4012302,
+43.0730517
+],
+[
+"Atlanta",
+16,
+410606,
+146,
+1566,
+37,
+37,
+5,
+7,
+12,
+12.7,
+59345,
+10.2,
+-84.3879824,
+33.7489954
+],
+[
+"Kansas City",
+15,
+458064,
+113,
+921,
+28,
+19,
+3,
+36,
+15,
+7.3,
+59980,
+6.9,
+-94.5785667,
+39.0997265
+],
+[
+"New Orleans",
+14,
+349773,
+284,
+986,
+34,
+20,
+2,
+84,
+10,
+8.5,
+48789,
+10.6,
+-90.0715323,
+29.9510658
+],
+[
+"Nashvile",
+13,
+603394,
+138,
+1493,
+30,
+35,
+3,
+18,
+13,
+8.3,
+59270,
+7.3,
+-86.783333,
+36.166667
+],
+[
+"Minneapolis",
+12,
+388229,
+97,
+969,
+21,
+25,
+4,
+13,
+8,
+12.5,
+64095,
+5.7,
+-93.26667,
+44.983334
+],
+[
+"Pittsburgh",
+11,
+308090,
+143,
+992,
+23,
+36,
+3,
+10,
+10,
+12.7,
+51907,
+7,
+-79.9958864,
+40.4406248
+],
+[
+"St. Paul",
+10,
+288263,
+51,
+515,
+19,
+26,
+3,
+14,
+9,
+10.9,
+60987,
+6.3,
+-93.0899578,
+44.9537029
+],
+[
+"San Diego ",
+9,
+1319558,
+189,
+3126,
+53,
+52,
+2,
+36,
+16,
+10.9,
+79269,
+9.2,
+-117.1610838,
+32.715738
+],
+[
+"Austin",
+8,
+797215,
+212,
+2135,
+25,
+35,
+0,
+37,
+9,
+11,
+65886,
+6.3,
+-97.7430608,
+30.267153
+],
+[
+"New York",
+7,
+8110206,
+1220,
+22320,
+356,
+341,
+8,
+5,
+103,
+9.6,
+58608,
+11,
+-74.0059413,
+40.7127837
+],
+[
+"Denver",
+6,
+597466,
+207,
+1741,
+33,
+39,
+6,
+10,
+13,
+10.9,
+59155,
+8.9,
+-104.9847179,
+39.737567
+],
+[
+"Portland",
+5,
+598205,
+313,
+2084,
+20,
+23,
+2,
+25,
+16,
+11.8,
+65554,
+7.9,
+-122.6762071,
+45.5234515
+],
+[
+"Boston",
+4,
+615462,
+136,
+2064,
+51,
+54,
+3,
+8,
+22,
+13.8,
+62180,
+6.6,
+-71.0597732,
+42.3584308
+],
+[
+"Washington",
+3,
+607731,
+134,
+2066,
+108,
+88,
+5,
+12,
+17,
+19.6,
+72110,
+9.1,
+-77.0368707,
+38.9071923
+],
+[
+"Seattle",
+2,
+624070,
+219,
+2307,
+29,
+42,
+4,
+9,
+8,
+16.8,
+90303,
+7.2,
+-122.3320708,
+47.6062095
+],
+[
+"San Francisco",
+1,
+808854,
+394,
+2430,
+70,
+52,
+2,
+7,
+17,
+16,
+90640,
+7.8,
+-122.4194155,
+37.7749295
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Rank');
+data.addColumn('number','Population');
+data.addColumn('number','Bars');
+data.addColumn('number','Restaurants');
+data.addColumn('number','Museums');
+data.addColumn('number','Libraries');
+data.addColumn('number','Pro.Sports.Teams');
+data.addColumn('number','Park.acres.per.1000.residents');
+data.addColumn('number','Colleges');
+data.addColumn('number','Percent.with.Graduate.Degree');
+data.addColumn('number','Median.household.income');
+data.addColumn('number','Percent.unemployed');
+data.addColumn('number','lon');
+data.addColumn('number','lat');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartTableID19845af1f73() {
+var data = gvisDataTableID19845af1f73();
+var options = {};
+options["allowHtml"] = true;
+options["page"] = "enable";
+options["width"] = 1000;
+options["height"] = 400;
+
+  var dataFormat1 = new google.visualization.NumberFormat({pattern:"#,###"});
+  dataFormat1.format(data, 2);
+
+    var chart = new google.visualization.Table(
+    document.getElementById('TableID19845af1f73')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "table";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartTableID19845af1f73);
+})();
+function displayChartTableID19845af1f73() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID19845af1f73"></script>
+<!-- divChart -->
+<div id="TableID19845af1f73" style="width: 1000; height: 400;">
+
+</div>
+<div id="rank-vs-population" class="section level3">
+<h3>Rank vs Population</h3>
+<pre class="r"><code>Line1 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Population&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Population&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line1)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:28 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1983fb2816 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+3811518,
+50
+],
+[
+"Anchorage",
+297018,
+49
+],
+[
+"Omaha",
+416855,
+48
+],
+[
+"St. Louis",
+304219,
+47
+],
+[
+"Cleveland",
+396441,
+46
+],
+[
+"Chesapeake",
+223454,
+45
+],
+[
+"Phoenix",
+1418687,
+44
+],
+[
+"Scottsdale",
+214770,
+43
+],
+[
+"Reno",
+225561,
+42
+],
+[
+"Dallas ",
+1199739,
+41
+],
+[
+"Virginia Beach",
+438243,
+40
+],
+[
+"Charlotte",
+745596,
+39
+],
+[
+"Tulsa",
+395176,
+38
+],
+[
+"Indianapolis",
+831943,
+37
+],
+[
+"Colorado Springs",
+421350,
+36
+],
+[
+"Tampa ",
+340509,
+35
+],
+[
+"Lincoln",
+259068,
+35
+],
+[
+"San Jose",
+956368,
+33
+],
+[
+"Rochester",
+213178,
+32
+],
+[
+"Oakland",
+401036,
+31
+],
+[
+"San Antonio",
+1365256,
+30
+],
+[
+"Baltimore",
+612701,
+29
+],
+[
+"Chicago",
+2679998,
+28
+],
+[
+"Arlington",
+208143,
+27
+],
+[
+"Milwaukee",
+593545,
+26
+],
+[
+"Lexington",
+299520,
+25
+],
+[
+"Philadelphia",
+1522648,
+24
+],
+[
+"Oklahoma City",
+588053,
+23
+],
+[
+"Houston",
+2131940,
+22
+],
+[
+"Cincinatti",
+292050,
+21
+],
+[
+"Columbus ",
+796520,
+20
+],
+[
+"Honolulu",
+399124,
+19
+],
+[
+"Raleigh",
+405462,
+18
+],
+[
+"Madison",
+231999,
+17
+],
+[
+"Atlanta",
+410606,
+16
+],
+[
+"Kansas City",
+458064,
+15
+],
+[
+"New Orleans",
+349773,
+14
+],
+[
+"Nashvile",
+603394,
+13
+],
+[
+"Minneapolis",
+388229,
+12
+],
+[
+"Pittsburgh",
+308090,
+11
+],
+[
+"St. Paul",
+288263,
+10
+],
+[
+"San Diego ",
+1319558,
+9
+],
+[
+"Austin",
+797215,
+8
+],
+[
+"New York",
+8110206,
+7
+],
+[
+"Denver",
+597466,
+6
+],
+[
+"Portland",
+598205,
+5
+],
+[
+"Boston",
+615462,
+4
+],
+[
+"Washington",
+607731,
+3
+],
+[
+"Seattle",
+624070,
+2
+],
+[
+"San Francisco",
+808854,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Population');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1983fb2816() {
+var data = gvisDataLineChartID1983fb2816();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Population'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1983fb2816')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1983fb2816);
+})();
+function displayChartLineChartID1983fb2816() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1983fb2816"></script>
+<!-- divChart -->
+<div id="LineChartID1983fb2816" style="width: 750; height: 500;">
+
+</div>
+<p>The correlation between Rank of the City (#1 being the best ranking city and #50 being the worst ranking city) and population of the city is not very high. This is clear because the line representing “Rank” is constant (because the variable is ordinal) but the Population fluctuates randomly across the graph. There is no clear correlation between rank and population.</p>
+</div>
+<div id="rank-vs-bars" class="section level3">
+<h3>Rank vs Bars</h3>
+<pre class="r"><code>Line2 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Bars&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Bars&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line2)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:29 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID19853b5866 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+393,
+50
+],
+[
+"Anchorage",
+63,
+49
+],
+[
+"Omaha",
+206,
+48
+],
+[
+"St. Louis",
+143,
+47
+],
+[
+"Cleveland",
+204,
+46
+],
+[
+"Chesapeake",
+10,
+45
+],
+[
+"Phoenix",
+179,
+44
+],
+[
+"Scottsdale",
+64,
+43
+],
+[
+"Reno",
+83,
+42
+],
+[
+"Dallas ",
+249,
+41
+],
+[
+"Virginia Beach",
+24,
+40
+],
+[
+"Charlotte",
+121,
+39
+],
+[
+"Tulsa",
+109,
+38
+],
+[
+"Indianapolis",
+195,
+37
+],
+[
+"Colorado Springs",
+69,
+36
+],
+[
+"Tampa ",
+91,
+35
+],
+[
+"Lincoln",
+74,
+35
+],
+[
+"San Jose",
+68,
+33
+],
+[
+"Rochester",
+78,
+32
+],
+[
+"Oakland",
+67,
+31
+],
+[
+"San Antonio",
+345,
+30
+],
+[
+"Baltimore",
+243,
+29
+],
+[
+"Chicago",
+807,
+28
+],
+[
+"Arlington",
+12,
+27
+],
+[
+"Milwaukee",
+390,
+26
+],
+[
+"Lexington",
+49,
+25
+],
+[
+"Philadelphia",
+400,
+24
+],
+[
+"Oklahoma City",
+102,
+23
+],
+[
+"Houston",
+549,
+22
+],
+[
+"Cincinatti",
+105,
+21
+],
+[
+"Columbus ",
+249,
+20
+],
+[
+"Honolulu",
+105,
+19
+],
+[
+"Raleigh",
+93,
+18
+],
+[
+"Madison",
+86,
+17
+],
+[
+"Atlanta",
+146,
+16
+],
+[
+"Kansas City",
+113,
+15
+],
+[
+"New Orleans",
+284,
+14
+],
+[
+"Nashvile",
+138,
+13
+],
+[
+"Minneapolis",
+97,
+12
+],
+[
+"Pittsburgh",
+143,
+11
+],
+[
+"St. Paul",
+51,
+10
+],
+[
+"San Diego ",
+189,
+9
+],
+[
+"Austin",
+212,
+8
+],
+[
+"New York",
+1220,
+7
+],
+[
+"Denver",
+207,
+6
+],
+[
+"Portland",
+313,
+5
+],
+[
+"Boston",
+136,
+4
+],
+[
+"Washington",
+134,
+3
+],
+[
+"Seattle",
+219,
+2
+],
+[
+"San Francisco",
+394,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Bars');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID19853b5866() {
+var data = gvisDataLineChartID19853b5866();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Bars'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID19853b5866')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID19853b5866);
+})();
+function displayChartLineChartID19853b5866() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID19853b5866"></script>
+<!-- divChart -->
+<div id="LineChartID19853b5866" style="width: 750; height: 500;">
+
+</div>
+<p>Rank and Bars don’t seem to have a strong correlation to each other either, as Seattle is #2 but only has 219 bars. However, bars, restaurants and population seem to have a similar patter of fluctuation, so we decided to compare those two variables to find out if that. So we decided to graph them below and see:</p>
+</div>
+<div id="bars-vs-population" class="section level3">
+<h3>Bars vs Population</h3>
+<pre class="r"><code>Line12 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Bars&quot;,&quot;Population&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Bars&#39;},{title:&#39;Population&#39;}]&quot;,width=750,height=500))
+plot(Line12)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:29 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1981cfd3923 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+393,
+3811518
+],
+[
+"Anchorage",
+63,
+297018
+],
+[
+"Omaha",
+206,
+416855
+],
+[
+"St. Louis",
+143,
+304219
+],
+[
+"Cleveland",
+204,
+396441
+],
+[
+"Chesapeake",
+10,
+223454
+],
+[
+"Phoenix",
+179,
+1418687
+],
+[
+"Scottsdale",
+64,
+214770
+],
+[
+"Reno",
+83,
+225561
+],
+[
+"Dallas ",
+249,
+1199739
+],
+[
+"Virginia Beach",
+24,
+438243
+],
+[
+"Charlotte",
+121,
+745596
+],
+[
+"Tulsa",
+109,
+395176
+],
+[
+"Indianapolis",
+195,
+831943
+],
+[
+"Colorado Springs",
+69,
+421350
+],
+[
+"Tampa ",
+91,
+340509
+],
+[
+"Lincoln",
+74,
+259068
+],
+[
+"San Jose",
+68,
+956368
+],
+[
+"Rochester",
+78,
+213178
+],
+[
+"Oakland",
+67,
+401036
+],
+[
+"San Antonio",
+345,
+1365256
+],
+[
+"Baltimore",
+243,
+612701
+],
+[
+"Chicago",
+807,
+2679998
+],
+[
+"Arlington",
+12,
+208143
+],
+[
+"Milwaukee",
+390,
+593545
+],
+[
+"Lexington",
+49,
+299520
+],
+[
+"Philadelphia",
+400,
+1522648
+],
+[
+"Oklahoma City",
+102,
+588053
+],
+[
+"Houston",
+549,
+2131940
+],
+[
+"Cincinatti",
+105,
+292050
+],
+[
+"Columbus ",
+249,
+796520
+],
+[
+"Honolulu",
+105,
+399124
+],
+[
+"Raleigh",
+93,
+405462
+],
+[
+"Madison",
+86,
+231999
+],
+[
+"Atlanta",
+146,
+410606
+],
+[
+"Kansas City",
+113,
+458064
+],
+[
+"New Orleans",
+284,
+349773
+],
+[
+"Nashvile",
+138,
+603394
+],
+[
+"Minneapolis",
+97,
+388229
+],
+[
+"Pittsburgh",
+143,
+308090
+],
+[
+"St. Paul",
+51,
+288263
+],
+[
+"San Diego ",
+189,
+1319558
+],
+[
+"Austin",
+212,
+797215
+],
+[
+"New York",
+1220,
+8110206
+],
+[
+"Denver",
+207,
+597466
+],
+[
+"Portland",
+313,
+598205
+],
+[
+"Boston",
+136,
+615462
+],
+[
+"Washington",
+134,
+607731
+],
+[
+"Seattle",
+219,
+624070
+],
+[
+"San Francisco",
+394,
+808854
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Bars');
+data.addColumn('number','Population');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1981cfd3923() {
+var data = gvisDataLineChartID1981cfd3923();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Bars'},{title:'Population'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1981cfd3923')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1981cfd3923);
+})();
+function displayChartLineChartID1981cfd3923() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1981cfd3923"></script>
+<!-- divChart -->
+<div id="LineChartID1981cfd3923" style="width: 750; height: 500;">
+
+</div>
+</div>
+<div id="rank-vs-restaurants" class="section level3">
+<h3>Rank vs Restaurants</h3>
+<pre class="r"><code>Line3 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Restaurants&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Restaurants&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line3)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:29 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID19835eb3baf () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+8305,
+50
+],
+[
+"Anchorage",
+682,
+49
+],
+[
+"Omaha",
+908,
+48
+],
+[
+"St. Louis",
+795,
+47
+],
+[
+"Cleveland",
+866,
+46
+],
+[
+"Chesapeake",
+451,
+45
+],
+[
+"Phoenix",
+2384,
+44
+],
+[
+"Scottsdale",
+680,
+43
+],
+[
+"Reno",
+596,
+42
+],
+[
+"Dallas ",
+2808,
+41
+],
+[
+"Virginia Beach",
+1144,
+40
+],
+[
+"Charlotte",
+1685,
+39
+],
+[
+"Tulsa",
+956,
+38
+],
+[
+"Indianapolis",
+1679,
+37
+],
+[
+"Colorado Springs",
+901,
+36
+],
+[
+"Tampa ",
+1114,
+35
+],
+[
+"Lincoln",
+523,
+35
+],
+[
+"San Jose",
+1578,
+33
+],
+[
+"Rochester",
+502,
+32
+],
+[
+"Oakland",
+894,
+31
+],
+[
+"San Antonio",
+2914,
+30
+],
+[
+"Baltimore",
+1590,
+29
+],
+[
+"Chicago",
+6438,
+28
+],
+[
+"Arlington",
+575,
+27
+],
+[
+"Milwaukee",
+947,
+26
+],
+[
+"Lexington",
+658,
+25
+],
+[
+"Philadelphia",
+3821,
+24
+],
+[
+"Oklahoma City",
+1251,
+23
+],
+[
+"Houston",
+5549,
+22
+],
+[
+"Cincinatti",
+600,
+21
+],
+[
+"Columbus ",
+1656,
+20
+],
+[
+"Honolulu",
+1296,
+19
+],
+[
+"Raleigh",
+1007,
+18
+],
+[
+"Madison",
+595,
+17
+],
+[
+"Atlanta",
+1566,
+16
+],
+[
+"Kansas City",
+921,
+15
+],
+[
+"New Orleans",
+986,
+14
+],
+[
+"Nashvile",
+1493,
+13
+],
+[
+"Minneapolis",
+969,
+12
+],
+[
+"Pittsburgh",
+992,
+11
+],
+[
+"St. Paul",
+515,
+10
+],
+[
+"San Diego ",
+3126,
+9
+],
+[
+"Austin",
+2135,
+8
+],
+[
+"New York",
+22320,
+7
+],
+[
+"Denver",
+1741,
+6
+],
+[
+"Portland",
+2084,
+5
+],
+[
+"Boston",
+2064,
+4
+],
+[
+"Washington",
+2066,
+3
+],
+[
+"Seattle",
+2307,
+2
+],
+[
+"San Francisco",
+2430,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Restaurants');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID19835eb3baf() {
+var data = gvisDataLineChartID19835eb3baf();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Restaurants'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID19835eb3baf')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID19835eb3baf);
+})();
+function displayChartLineChartID19835eb3baf() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID19835eb3baf"></script>
+<!-- divChart -->
+<div id="LineChartID19835eb3baf" style="width: 750; height: 500;">
+
+</div>
+</div>
+<div id="restaurants-vs-population" class="section level3">
+<h3>Restaurants vs Population</h3>
+<pre class="r"><code>Line12 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Restaurants&quot;,&quot;Population&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Restaurants&#39;},{title:&#39;Population&#39;}]&quot;,width=750,height=500))
+plot(Line12)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:30 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID198f94401f () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+8305,
+3811518
+],
+[
+"Anchorage",
+682,
+297018
+],
+[
+"Omaha",
+908,
+416855
+],
+[
+"St. Louis",
+795,
+304219
+],
+[
+"Cleveland",
+866,
+396441
+],
+[
+"Chesapeake",
+451,
+223454
+],
+[
+"Phoenix",
+2384,
+1418687
+],
+[
+"Scottsdale",
+680,
+214770
+],
+[
+"Reno",
+596,
+225561
+],
+[
+"Dallas ",
+2808,
+1199739
+],
+[
+"Virginia Beach",
+1144,
+438243
+],
+[
+"Charlotte",
+1685,
+745596
+],
+[
+"Tulsa",
+956,
+395176
+],
+[
+"Indianapolis",
+1679,
+831943
+],
+[
+"Colorado Springs",
+901,
+421350
+],
+[
+"Tampa ",
+1114,
+340509
+],
+[
+"Lincoln",
+523,
+259068
+],
+[
+"San Jose",
+1578,
+956368
+],
+[
+"Rochester",
+502,
+213178
+],
+[
+"Oakland",
+894,
+401036
+],
+[
+"San Antonio",
+2914,
+1365256
+],
+[
+"Baltimore",
+1590,
+612701
+],
+[
+"Chicago",
+6438,
+2679998
+],
+[
+"Arlington",
+575,
+208143
+],
+[
+"Milwaukee",
+947,
+593545
+],
+[
+"Lexington",
+658,
+299520
+],
+[
+"Philadelphia",
+3821,
+1522648
+],
+[
+"Oklahoma City",
+1251,
+588053
+],
+[
+"Houston",
+5549,
+2131940
+],
+[
+"Cincinatti",
+600,
+292050
+],
+[
+"Columbus ",
+1656,
+796520
+],
+[
+"Honolulu",
+1296,
+399124
+],
+[
+"Raleigh",
+1007,
+405462
+],
+[
+"Madison",
+595,
+231999
+],
+[
+"Atlanta",
+1566,
+410606
+],
+[
+"Kansas City",
+921,
+458064
+],
+[
+"New Orleans",
+986,
+349773
+],
+[
+"Nashvile",
+1493,
+603394
+],
+[
+"Minneapolis",
+969,
+388229
+],
+[
+"Pittsburgh",
+992,
+308090
+],
+[
+"St. Paul",
+515,
+288263
+],
+[
+"San Diego ",
+3126,
+1319558
+],
+[
+"Austin",
+2135,
+797215
+],
+[
+"New York",
+22320,
+8110206
+],
+[
+"Denver",
+1741,
+597466
+],
+[
+"Portland",
+2084,
+598205
+],
+[
+"Boston",
+2064,
+615462
+],
+[
+"Washington",
+2066,
+607731
+],
+[
+"Seattle",
+2307,
+624070
+],
+[
+"San Francisco",
+2430,
+808854
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Restaurants');
+data.addColumn('number','Population');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID198f94401f() {
+var data = gvisDataLineChartID198f94401f();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Restaurants'},{title:'Population'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID198f94401f')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID198f94401f);
+})();
+function displayChartLineChartID198f94401f() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID198f94401f"></script>
+<!-- divChart -->
+<div id="LineChartID198f94401f" style="width: 750; height: 500;">
+
+</div>
+<p>The two variables restaurants and population have a high correlation, which only makes sense as more people naturally mean a greater demand for food. However, these variables don’t have a strong effect on the rank.</p>
+</div>
+<div id="rank-vs-museums" class="section level3">
+<h3>Rank vs Museums</h3>
+<pre class="r"><code>Line4 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Museums&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Museums&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line4)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:30 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID19896f4192 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+106,
+50
+],
+[
+"Anchorage",
+12,
+49
+],
+[
+"Omaha",
+12,
+48
+],
+[
+"St. Louis",
+32,
+47
+],
+[
+"Cleveland",
+23,
+46
+],
+[
+"Chesapeake",
+1,
+45
+],
+[
+"Phoenix",
+22,
+44
+],
+[
+"Scottsdale",
+5,
+43
+],
+[
+"Reno",
+10,
+42
+],
+[
+"Dallas ",
+26,
+41
+],
+[
+"Virginia Beach",
+10,
+40
+],
+[
+"Charlotte",
+16,
+39
+],
+[
+"Tulsa",
+15,
+38
+],
+[
+"Indianapolis",
+21,
+37
+],
+[
+"Colorado Springs",
+16,
+36
+],
+[
+"Tampa ",
+18,
+35
+],
+[
+"Lincoln",
+22,
+35
+],
+[
+"San Jose",
+12,
+33
+],
+[
+"Rochester",
+14,
+32
+],
+[
+"Oakland",
+14,
+31
+],
+[
+"San Antonio",
+31,
+30
+],
+[
+"Baltimore",
+45,
+29
+],
+[
+"Chicago",
+76,
+28
+],
+[
+"Arlington",
+8,
+27
+],
+[
+"Milwaukee",
+20,
+26
+],
+[
+"Lexington",
+17,
+25
+],
+[
+"Philadelphia",
+91,
+24
+],
+[
+"Oklahoma City",
+29,
+23
+],
+[
+"Houston",
+58,
+22
+],
+[
+"Cincinatti",
+18,
+21
+],
+[
+"Columbus ",
+13,
+20
+],
+[
+"Honolulu",
+31,
+19
+],
+[
+"Raleigh",
+15,
+18
+],
+[
+"Madison",
+12,
+17
+],
+[
+"Atlanta",
+37,
+16
+],
+[
+"Kansas City",
+28,
+15
+],
+[
+"New Orleans",
+34,
+14
+],
+[
+"Nashvile",
+30,
+13
+],
+[
+"Minneapolis",
+21,
+12
+],
+[
+"Pittsburgh",
+23,
+11
+],
+[
+"St. Paul",
+19,
+10
+],
+[
+"San Diego ",
+53,
+9
+],
+[
+"Austin",
+25,
+8
+],
+[
+"New York",
+356,
+7
+],
+[
+"Denver",
+33,
+6
+],
+[
+"Portland",
+20,
+5
+],
+[
+"Boston",
+51,
+4
+],
+[
+"Washington",
+108,
+3
+],
+[
+"Seattle",
+29,
+2
+],
+[
+"San Francisco",
+70,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Museums');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID19896f4192() {
+var data = gvisDataLineChartID19896f4192();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Museums'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID19896f4192')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID19896f4192);
+})();
+function displayChartLineChartID19896f4192() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID19896f4192"></script>
+<!-- divChart -->
+<div id="LineChartID19896f4192" style="width: 750; height: 500;">
+
+</div>
+<p>No visible correlation.</p>
+</div>
+<div id="ranks-vs-libraries" class="section level3">
+<h3>Ranks vs Libraries</h3>
+<pre class="r"><code>Line5 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Libraries&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Libraries&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line5)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:30 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1981f1c1cc1 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+108,
+50
+],
+[
+"Anchorage",
+14,
+49
+],
+[
+"Omaha",
+15,
+48
+],
+[
+"St. Louis",
+23,
+47
+],
+[
+"Cleveland",
+51,
+46
+],
+[
+"Chesapeake",
+8,
+45
+],
+[
+"Phoenix",
+44,
+44
+],
+[
+"Scottsdale",
+7,
+43
+],
+[
+"Reno",
+14,
+42
+],
+[
+"Dallas ",
+43,
+41
+],
+[
+"Virginia Beach",
+18,
+40
+],
+[
+"Charlotte",
+26,
+39
+],
+[
+"Tulsa",
+21,
+38
+],
+[
+"Indianapolis",
+35,
+37
+],
+[
+"Colorado Springs",
+10,
+36
+],
+[
+"Tampa ",
+19,
+35
+],
+[
+"Lincoln",
+18,
+35
+],
+[
+"San Jose",
+31,
+33
+],
+[
+"Rochester",
+17,
+32
+],
+[
+"Oakland",
+27,
+31
+],
+[
+"San Antonio",
+36,
+30
+],
+[
+"Baltimore",
+36,
+29
+],
+[
+"Chicago",
+99,
+28
+],
+[
+"Arlington",
+12,
+27
+],
+[
+"Milwaukee",
+30,
+26
+],
+[
+"Lexington",
+14,
+25
+],
+[
+"Philadelphia",
+100,
+24
+],
+[
+"Oklahoma City",
+13,
+23
+],
+[
+"Houston",
+63,
+22
+],
+[
+"Cincinatti",
+35,
+21
+],
+[
+"Columbus ",
+27,
+20
+],
+[
+"Honolulu",
+38,
+19
+],
+[
+"Raleigh",
+17,
+18
+],
+[
+"Madison",
+33,
+17
+],
+[
+"Atlanta",
+37,
+16
+],
+[
+"Kansas City",
+19,
+15
+],
+[
+"New Orleans",
+20,
+14
+],
+[
+"Nashvile",
+35,
+13
+],
+[
+"Minneapolis",
+25,
+12
+],
+[
+"Pittsburgh",
+36,
+11
+],
+[
+"St. Paul",
+26,
+10
+],
+[
+"San Diego ",
+52,
+9
+],
+[
+"Austin",
+35,
+8
+],
+[
+"New York",
+341,
+7
+],
+[
+"Denver",
+39,
+6
+],
+[
+"Portland",
+23,
+5
+],
+[
+"Boston",
+54,
+4
+],
+[
+"Washington",
+88,
+3
+],
+[
+"Seattle",
+42,
+2
+],
+[
+"San Francisco",
+52,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Libraries');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1981f1c1cc1() {
+var data = gvisDataLineChartID1981f1c1cc1();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Libraries'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1981f1c1cc1')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1981f1c1cc1);
+})();
+function displayChartLineChartID1981f1c1cc1() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1981f1c1cc1"></script>
+<!-- divChart -->
+<div id="LineChartID1981f1c1cc1" style="width: 750; height: 500;">
+
+</div>
+<p>No visible correlation.</p>
+</div>
+<div id="rank-vs-pro-sport-teams" class="section level3">
+<h3>Rank vs Pro Sport Teams</h3>
+<pre class="r"><code>Line6 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Pro.Sports.Teams&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Pro Sports Teams&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line6)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:30 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID19879ee24d8 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+5,
+50
+],
+[
+"Anchorage",
+0,
+49
+],
+[
+"Omaha",
+1,
+48
+],
+[
+"St. Louis",
+3,
+47
+],
+[
+"Cleveland",
+3,
+46
+],
+[
+"Chesapeake",
+0,
+45
+],
+[
+"Phoenix",
+5,
+44
+],
+[
+"Scottsdale",
+1,
+43
+],
+[
+"Reno",
+1,
+42
+],
+[
+"Dallas ",
+2,
+41
+],
+[
+"Virginia Beach",
+0,
+40
+],
+[
+"Charlotte",
+3,
+39
+],
+[
+"Tulsa",
+1,
+38
+],
+[
+"Indianapolis",
+4,
+37
+],
+[
+"Colorado Springs",
+1,
+36
+],
+[
+"Tampa ",
+4,
+35
+],
+[
+"Lincoln",
+0,
+35
+],
+[
+"San Jose",
+4,
+33
+],
+[
+"Rochester",
+3,
+32
+],
+[
+"Oakland",
+3,
+31
+],
+[
+"San Antonio",
+3,
+30
+],
+[
+"Baltimore",
+2,
+29
+],
+[
+"Chicago",
+8,
+28
+],
+[
+"Arlington",
+0,
+27
+],
+[
+"Milwaukee",
+2,
+26
+],
+[
+"Lexington",
+1,
+25
+],
+[
+"Philadelphia",
+5,
+24
+],
+[
+"Oklahoma City",
+2,
+23
+],
+[
+"Houston",
+6,
+22
+],
+[
+"Cincinatti",
+2,
+21
+],
+[
+"Columbus ",
+2,
+20
+],
+[
+"Honolulu",
+0,
+19
+],
+[
+"Raleigh",
+1,
+18
+],
+[
+"Madison",
+0,
+17
+],
+[
+"Atlanta",
+5,
+16
+],
+[
+"Kansas City",
+3,
+15
+],
+[
+"New Orleans",
+2,
+14
+],
+[
+"Nashvile",
+3,
+13
+],
+[
+"Minneapolis",
+4,
+12
+],
+[
+"Pittsburgh",
+3,
+11
+],
+[
+"St. Paul",
+3,
+10
+],
+[
+"San Diego ",
+2,
+9
+],
+[
+"Austin",
+0,
+8
+],
+[
+"New York",
+8,
+7
+],
+[
+"Denver",
+6,
+6
+],
+[
+"Portland",
+2,
+5
+],
+[
+"Boston",
+3,
+4
+],
+[
+"Washington",
+5,
+3
+],
+[
+"Seattle",
+4,
+2
+],
+[
+"San Francisco",
+2,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Pro.Sports.Teams');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID19879ee24d8() {
+var data = gvisDataLineChartID19879ee24d8();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Pro Sports Teams'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID19879ee24d8')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID19879ee24d8);
+})();
+function displayChartLineChartID19879ee24d8() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID19879ee24d8"></script>
+<!-- divChart -->
+<div id="LineChartID19879ee24d8" style="width: 750; height: 500;">
+
+</div>
+<p>Rank and Pro Sports Teams shows a very interesting graph with high fluctuations, however it does not depict a strong correlation between the two variables.</p>
+</div>
+<div id="rank-vs-park-acres-per-1000-residents" class="section level3">
+<h3>Rank vs Park Acres per 1000 Residents</h3>
+<pre class="r"><code>Line7 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Park.acres.per.1000.residents&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Park Acres per 1000 Residents&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line7)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:30 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1983ba77a85 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+6,
+50
+],
+[
+"Anchorage",
+1753,
+49
+],
+[
+"Omaha",
+21,
+48
+],
+[
+"St. Louis",
+10,
+47
+],
+[
+"Cleveland",
+7,
+46
+],
+[
+"Chesapeake",
+252,
+45
+],
+[
+"Phoenix",
+28,
+44
+],
+[
+"Scottsdale",
+72,
+43
+],
+[
+"Reno",
+11,
+42
+],
+[
+"Dallas ",
+23,
+41
+],
+[
+"Virginia Beach",
+68,
+40
+],
+[
+"Charlotte",
+20,
+39
+],
+[
+"Tulsa",
+19,
+38
+],
+[
+"Indianapolis",
+14,
+37
+],
+[
+"Colorado Springs",
+30,
+36
+],
+[
+"Tampa ",
+10,
+35
+],
+[
+"Lincoln",
+25,
+35
+],
+[
+"San Jose",
+17,
+33
+],
+[
+"Rochester",
+7,
+32
+],
+[
+"Oakland",
+13,
+31
+],
+[
+"San Antonio",
+17,
+30
+],
+[
+"Baltimore",
+8,
+29
+],
+[
+"Chicago",
+4,
+28
+],
+[
+"Arlington",
+8,
+27
+],
+[
+"Milwaukee",
+16,
+26
+],
+[
+"Lexington",
+21,
+25
+],
+[
+"Philadelphia",
+7,
+24
+],
+[
+"Oklahoma City",
+39,
+23
+],
+[
+"Houston",
+22,
+22
+],
+[
+"Cincinatti",
+21,
+21
+],
+[
+"Columbus ",
+15,
+20
+],
+[
+"Honolulu",
+7,
+19
+],
+[
+"Raleigh",
+31,
+18
+],
+[
+"Madison",
+22,
+17
+],
+[
+"Atlanta",
+7,
+16
+],
+[
+"Kansas City",
+36,
+15
+],
+[
+"New Orleans",
+84,
+14
+],
+[
+"Nashvile",
+18,
+13
+],
+[
+"Minneapolis",
+13,
+12
+],
+[
+"Pittsburgh",
+10,
+11
+],
+[
+"St. Paul",
+14,
+10
+],
+[
+"San Diego ",
+36,
+9
+],
+[
+"Austin",
+37,
+8
+],
+[
+"New York",
+5,
+7
+],
+[
+"Denver",
+10,
+6
+],
+[
+"Portland",
+25,
+5
+],
+[
+"Boston",
+8,
+4
+],
+[
+"Washington",
+12,
+3
+],
+[
+"Seattle",
+9,
+2
+],
+[
+"San Francisco",
+7,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Park.acres.per.1000.residents');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1983ba77a85() {
+var data = gvisDataLineChartID1983ba77a85();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Park Acres per 1000 Residents'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1983ba77a85')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1983ba77a85);
+})();
+function displayChartLineChartID1983ba77a85() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1983ba77a85"></script>
+<!-- divChart -->
+<div id="LineChartID1983ba77a85" style="width: 750; height: 500;">
+
+</div>
+<p>The amount of park acres per 1000 residents shows us no correlation to rank.</p>
+</div>
+<div id="rank-vs-colleges" class="section level3">
+<h3>Rank vs Colleges</h3>
+<pre class="r"><code>Line8 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Colleges&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Colleges&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line8)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:31 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1986682594e () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+30,
+50
+],
+[
+"Anchorage",
+2,
+49
+],
+[
+"Omaha",
+7,
+48
+],
+[
+"St. Louis",
+6,
+47
+],
+[
+"Cleveland",
+8,
+46
+],
+[
+"Chesapeake",
+11,
+45
+],
+[
+"Phoenix",
+11,
+44
+],
+[
+"Scottsdale",
+2,
+43
+],
+[
+"Reno",
+3,
+42
+],
+[
+"Dallas ",
+10,
+41
+],
+[
+"Virginia Beach",
+3,
+40
+],
+[
+"Charlotte",
+8,
+39
+],
+[
+"Tulsa",
+6,
+38
+],
+[
+"Indianapolis",
+11,
+37
+],
+[
+"Colorado Springs",
+9,
+36
+],
+[
+"Tampa ",
+6,
+35
+],
+[
+"Lincoln",
+3,
+35
+],
+[
+"San Jose",
+4,
+33
+],
+[
+"Rochester",
+4,
+32
+],
+[
+"Oakland",
+7,
+31
+],
+[
+"San Antonio",
+7,
+30
+],
+[
+"Baltimore",
+11,
+29
+],
+[
+"Chicago",
+42,
+28
+],
+[
+"Arlington",
+5,
+27
+],
+[
+"Milwaukee",
+12,
+26
+],
+[
+"Lexington",
+3,
+25
+],
+[
+"Philadelphia",
+18,
+24
+],
+[
+"Oklahoma City",
+6,
+23
+],
+[
+"Houston",
+17,
+22
+],
+[
+"Cincinatti",
+8,
+21
+],
+[
+"Columbus ",
+8,
+20
+],
+[
+"Honolulu",
+10,
+19
+],
+[
+"Raleigh",
+5,
+18
+],
+[
+"Madison",
+2,
+17
+],
+[
+"Atlanta",
+12,
+16
+],
+[
+"Kansas City",
+15,
+15
+],
+[
+"New Orleans",
+10,
+14
+],
+[
+"Nashvile",
+13,
+13
+],
+[
+"Minneapolis",
+8,
+12
+],
+[
+"Pittsburgh",
+10,
+11
+],
+[
+"St. Paul",
+9,
+10
+],
+[
+"San Diego ",
+16,
+9
+],
+[
+"Austin",
+9,
+8
+],
+[
+"New York",
+103,
+7
+],
+[
+"Denver",
+13,
+6
+],
+[
+"Portland",
+16,
+5
+],
+[
+"Boston",
+22,
+4
+],
+[
+"Washington",
+17,
+3
+],
+[
+"Seattle",
+8,
+2
+],
+[
+"San Francisco",
+17,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Colleges');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1986682594e() {
+var data = gvisDataLineChartID1986682594e();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Colleges'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1986682594e')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1986682594e);
+})();
+function displayChartLineChartID1986682594e() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1986682594e"></script>
+<!-- divChart -->
+<div id="LineChartID1986682594e" style="width: 750; height: 500;">
+
+</div>
+<p>Colleges and Rank: no correlation.</p>
+</div>
+<div id="rank-vs-percent-with-graduate-degree" class="section level3">
+<h3>Rank vs Percent with Graduate Degree</h3>
+<pre class="r"><code>Line9 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Percent.with.Graduate.Degree&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Percent with Graduate Degree&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line9)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:31 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1986774f27 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+6.7,
+50
+],
+[
+"Anchorage",
+7.5,
+49
+],
+[
+"Omaha",
+7.1,
+48
+],
+[
+"St. Louis",
+7.8,
+47
+],
+[
+"Cleveland",
+4.5,
+46
+],
+[
+"Chesapeake",
+6.8,
+45
+],
+[
+"Phoenix",
+6.2,
+44
+],
+[
+"Scottsdale",
+10.8,
+43
+],
+[
+"Reno",
+7.1,
+42
+],
+[
+"Dallas ",
+5.9,
+41
+],
+[
+"Virginia Beach",
+7.3,
+40
+],
+[
+"Charlotte",
+8.6,
+39
+],
+[
+"Tulsa",
+6.2,
+38
+],
+[
+"Indianapolis",
+6.5,
+37
+],
+[
+"Colorado Springs",
+9,
+36
+],
+[
+"Tampa ",
+7.5,
+35
+],
+[
+"Lincoln",
+7.3,
+35
+],
+[
+"San Jose",
+9.8,
+33
+],
+[
+"Rochester",
+7.8,
+32
+],
+[
+"Oakland",
+11.2,
+31
+],
+[
+"San Antonio",
+5.5,
+30
+],
+[
+"Baltimore",
+8.5,
+29
+],
+[
+"Chicago",
+9.3,
+28
+],
+[
+"Arlington",
+27.2,
+27
+],
+[
+"Milwaukee",
+5.4,
+26
+],
+[
+"Lexington",
+11,
+25
+],
+[
+"Philadelphia",
+6.4,
+24
+],
+[
+"Oklahoma City",
+6,
+23
+],
+[
+"Houston",
+6.6,
+22
+],
+[
+"Cincinatti",
+8.9,
+21
+],
+[
+"Columbus ",
+7.8,
+20
+],
+[
+"Honolulu",
+8.9,
+19
+],
+[
+"Raleigh",
+11.4,
+18
+],
+[
+"Madison",
+15.6,
+17
+],
+[
+"Atlanta",
+12.7,
+16
+],
+[
+"Kansas City",
+7.3,
+15
+],
+[
+"New Orleans",
+8.5,
+14
+],
+[
+"Nashvile",
+8.3,
+13
+],
+[
+"Minneapolis",
+12.5,
+12
+],
+[
+"Pittsburgh",
+12.7,
+11
+],
+[
+"St. Paul",
+10.9,
+10
+],
+[
+"San Diego ",
+10.9,
+9
+],
+[
+"Austin",
+11,
+8
+],
+[
+"New York",
+9.6,
+7
+],
+[
+"Denver",
+10.9,
+6
+],
+[
+"Portland",
+11.8,
+5
+],
+[
+"Boston",
+13.8,
+4
+],
+[
+"Washington",
+19.6,
+3
+],
+[
+"Seattle",
+16.8,
+2
+],
+[
+"San Francisco",
+16,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Percent.with.Graduate.Degree');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1986774f27() {
+var data = gvisDataLineChartID1986774f27();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Percent with Graduate Degree'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1986774f27')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1986774f27);
+})();
+function displayChartLineChartID1986774f27() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1986774f27"></script>
+<!-- divChart -->
+<div id="LineChartID1986774f27" style="width: 750; height: 500;">
+
+</div>
+</div>
+<div id="rank-vs-median-household-income" class="section level3">
+<h3>Rank vs Median household income</h3>
+<pre class="r"><code>Line10 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Median.household.income&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Median Household Income&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line10)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:31 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1987fba1244 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+56558,
+50
+],
+[
+"Anchorage",
+85554,
+49
+],
+[
+"Omaha",
+64026,
+48
+],
+[
+"St. Louis",
+44360,
+47
+],
+[
+"Cleveland",
+35685,
+46
+],
+[
+"Chesapeake",
+80695,
+45
+],
+[
+"Phoenix",
+60366,
+44
+],
+[
+"Scottsdale",
+99130,
+43
+],
+[
+"Reno",
+64507,
+42
+],
+[
+"Dallas ",
+44838,
+41
+],
+[
+"Virginia Beach",
+76637,
+40
+],
+[
+"Charlotte",
+65622,
+39
+],
+[
+"Tulsa",
+53059,
+38
+],
+[
+"Indianapolis",
+56862,
+37
+],
+[
+"Colorado Springs",
+70437,
+36
+],
+[
+"Tampa ",
+55039,
+35
+],
+[
+"Lincoln",
+67093,
+35
+],
+[
+"San Jose",
+92539,
+33
+],
+[
+"Rochester",
+37111,
+32
+],
+[
+"Oakland",
+59097,
+31
+],
+[
+"San Antonio",
+54444,
+30
+],
+[
+"Baltimore",
+50492,
+29
+],
+[
+"Chicago",
+56121,
+28
+],
+[
+"Arlington",
+132580,
+27
+],
+[
+"Milwaukee",
+44113,
+26
+],
+[
+"Lexington",
+69697,
+25
+],
+[
+"Philadelphia",
+48330,
+24
+],
+[
+"Oklahoma City",
+58370,
+23
+],
+[
+"Houston",
+48889,
+22
+],
+[
+"Cincinatti",
+49048,
+21
+],
+[
+"Columbus ",
+54763,
+20
+],
+[
+"Honolulu",
+78233,
+19
+],
+[
+"Raleigh",
+76255,
+18
+],
+[
+"Madison",
+78187,
+17
+],
+[
+"Atlanta",
+59345,
+16
+],
+[
+"Kansas City",
+59980,
+15
+],
+[
+"New Orleans",
+48789,
+14
+],
+[
+"Nashvile",
+59270,
+13
+],
+[
+"Minneapolis",
+64095,
+12
+],
+[
+"Pittsburgh",
+51907,
+11
+],
+[
+"St. Paul",
+60987,
+10
+],
+[
+"San Diego ",
+79269,
+9
+],
+[
+"Austin",
+65886,
+8
+],
+[
+"New York",
+58608,
+7
+],
+[
+"Denver",
+59155,
+6
+],
+[
+"Portland",
+65554,
+5
+],
+[
+"Boston",
+62180,
+4
+],
+[
+"Washington",
+72110,
+3
+],
+[
+"Seattle",
+90303,
+2
+],
+[
+"San Francisco",
+90640,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Median.household.income');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1987fba1244() {
+var data = gvisDataLineChartID1987fba1244();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Median Household Income'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1987fba1244')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1987fba1244);
+})();
+function displayChartLineChartID1987fba1244() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1987fba1244"></script>
+<!-- divChart -->
+<div id="LineChartID1987fba1244" style="width: 750; height: 500;">
+
+</div>
+<p>Finally we see some amount of correlation between rank and percent of population with a graduate degree. This can be seen through the upward trend of the line depicting percent of population with a graduate degree, and how it gets higher as the rank gets closer to #1, with a few outliers. This could be due to the fact that people with graduate degrees often seek high paying jobs with well-established or growing companies, making these areas more prestigious and wealthy. When people in a certain city have more money, then the city tends to have nicer places to eat or shop, and a cleaner city all together. This also explains why the following graph comparing rank and median household income is similar to the graph above.</p>
+</div>
+<div id="rank-vs-percent-unemployed" class="section level3">
+<h3>Rank vs Percent Unemployed</h3>
+<pre class="r"><code>Line11 &lt;- gvisLineChart(bcities,&quot;City&quot;,c(&quot;Percent.unemployed&quot;,&quot;Rank&quot;),options=list(series=&quot;[{targetAxisIndex:0},{targetAxisIndex:1}]&quot;,vAxes=&quot;[{title:&#39;Percent Unemployed&#39;},{title:&#39;Rank&#39;}]&quot;,width=750,height=500))
+plot(Line11)</code></pre>
+<!-- LineChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:31 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID1982685692c () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+11.1,
+50
+],
+[
+"Anchorage",
+6.4,
+49
+],
+[
+"Omaha",
+4.6,
+48
+],
+[
+"St. Louis",
+9.8,
+47
+],
+[
+"Cleveland",
+7.9,
+46
+],
+[
+"Chesapeake",
+6.3,
+45
+],
+[
+"Phoenix",
+7.3,
+44
+],
+[
+"Scottsdale",
+7.3,
+43
+],
+[
+"Reno",
+11.7,
+42
+],
+[
+"Dallas ",
+7.9,
+41
+],
+[
+"Virginia Beach",
+5.7,
+40
+],
+[
+"Charlotte",
+9.9,
+39
+],
+[
+"Tulsa",
+5.5,
+38
+],
+[
+"Indianapolis",
+8.9,
+37
+],
+[
+"Colorado Springs",
+9.9,
+36
+],
+[
+"Tampa ",
+8.8,
+35
+],
+[
+"Lincoln",
+3.7,
+35
+],
+[
+"San Jose",
+8.7,
+33
+],
+[
+"Rochester",
+8.4,
+32
+],
+[
+"Oakland",
+9.5,
+31
+],
+[
+"San Antonio",
+7.4,
+30
+],
+[
+"Baltimore",
+11.1,
+29
+],
+[
+"Chicago",
+9.8,
+28
+],
+[
+"Arlington",
+3.7,
+27
+],
+[
+"Milwaukee",
+9.4,
+26
+],
+[
+"Lexington",
+6.5,
+25
+],
+[
+"Philadelphia",
+10.9,
+24
+],
+[
+"Oklahoma City",
+5,
+23
+],
+[
+"Houston",
+7.6,
+22
+],
+[
+"Cincinatti",
+7.2,
+21
+],
+[
+"Columbus ",
+6.5,
+20
+],
+[
+"Honolulu",
+6.4,
+19
+],
+[
+"Raleigh",
+7.8,
+18
+],
+[
+"Madison",
+5.4,
+17
+],
+[
+"Atlanta",
+10.2,
+16
+],
+[
+"Kansas City",
+6.9,
+15
+],
+[
+"New Orleans",
+10.6,
+14
+],
+[
+"Nashvile",
+7.3,
+13
+],
+[
+"Minneapolis",
+5.7,
+12
+],
+[
+"Pittsburgh",
+7,
+11
+],
+[
+"St. Paul",
+6.3,
+10
+],
+[
+"San Diego ",
+9.2,
+9
+],
+[
+"Austin",
+6.3,
+8
+],
+[
+"New York",
+11,
+7
+],
+[
+"Denver",
+8.9,
+6
+],
+[
+"Portland",
+7.9,
+5
+],
+[
+"Boston",
+6.6,
+4
+],
+[
+"Washington",
+9.1,
+3
+],
+[
+"Seattle",
+7.2,
+2
+],
+[
+"San Francisco",
+7.8,
+1
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Percent.unemployed');
+data.addColumn('number','Rank');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID1982685692c() {
+var data = gvisDataLineChartID1982685692c();
+var options = {};
+options["allowHtml"] = true;
+options["series"] = [{targetAxisIndex:0},{targetAxisIndex:1}];
+options["vAxes"] = [{title:'Percent Unemployed'},{title:'Rank'}];
+options["width"] = 750;
+options["height"] = 500;
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID1982685692c')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID1982685692c);
+})();
+function displayChartLineChartID1982685692c() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID1982685692c"></script>
+<!-- divChart -->
+<div id="LineChartID1982685692c" style="width: 750; height: 500;">
+
+</div>
+<p>It doesn’t seem that rank and unemployment rate have a clear correlation. However, it seems that it would have a high correlation to people with graduate degrees.</p>
+</div>
+<div id="graduate-degree-geochart" class="section level3">
+<h3>Graduate Degree GeoChart</h3>
+<p>Please allow for city markers to load.</p>
+<pre class="r"><code>GeoCities &lt;- gvisGeoChart(bcities,locationvar = &quot;City&quot;, sizevar = &quot;Percent.with.Graduate.Degree&quot;,options=list(region=&quot;US&quot;, resolution = &quot;provinces&quot;, width=1000,height=400,displayMode=&quot;markers&quot;))
+plot(GeoCities)</code></pre>
+<!-- GeoChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:32 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataGeoChartID198417590f () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+6.7
+],
+[
+"Anchorage",
+7.5
+],
+[
+"Omaha",
+7.1
+],
+[
+"St. Louis",
+7.8
+],
+[
+"Cleveland",
+4.5
+],
+[
+"Chesapeake",
+6.8
+],
+[
+"Phoenix",
+6.2
+],
+[
+"Scottsdale",
+10.8
+],
+[
+"Reno",
+7.1
+],
+[
+"Dallas ",
+5.9
+],
+[
+"Virginia Beach",
+7.3
+],
+[
+"Charlotte",
+8.6
+],
+[
+"Tulsa",
+6.2
+],
+[
+"Indianapolis",
+6.5
+],
+[
+"Colorado Springs",
+9
+],
+[
+"Tampa ",
+7.5
+],
+[
+"Lincoln",
+7.3
+],
+[
+"San Jose",
+9.8
+],
+[
+"Rochester",
+7.8
+],
+[
+"Oakland",
+11.2
+],
+[
+"San Antonio",
+5.5
+],
+[
+"Baltimore",
+8.5
+],
+[
+"Chicago",
+9.3
+],
+[
+"Arlington",
+27.2
+],
+[
+"Milwaukee",
+5.4
+],
+[
+"Lexington",
+11
+],
+[
+"Philadelphia",
+6.4
+],
+[
+"Oklahoma City",
+6
+],
+[
+"Houston",
+6.6
+],
+[
+"Cincinatti",
+8.9
+],
+[
+"Columbus ",
+7.8
+],
+[
+"Honolulu",
+8.9
+],
+[
+"Raleigh",
+11.4
+],
+[
+"Madison",
+15.6
+],
+[
+"Atlanta",
+12.7
+],
+[
+"Kansas City",
+7.3
+],
+[
+"New Orleans",
+8.5
+],
+[
+"Nashvile",
+8.3
+],
+[
+"Minneapolis",
+12.5
+],
+[
+"Pittsburgh",
+12.7
+],
+[
+"St. Paul",
+10.9
+],
+[
+"San Diego ",
+10.9
+],
+[
+"Austin",
+11
+],
+[
+"New York",
+9.6
+],
+[
+"Denver",
+10.9
+],
+[
+"Portland",
+11.8
+],
+[
+"Boston",
+13.8
+],
+[
+"Washington",
+19.6
+],
+[
+"Seattle",
+16.8
+],
+[
+"San Francisco",
+16
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Percent.with.Graduate.Degree');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartGeoChartID198417590f() {
+var data = gvisDataGeoChartID198417590f();
+var options = {};
+options["width"] = 1000;
+options["height"] = 400;
+options["region"] = "US";
+options["resolution"] = "provinces";
+options["displayMode"] = "markers";
+
+    var chart = new google.visualization.GeoChart(
+    document.getElementById('GeoChartID198417590f')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "geochart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartGeoChartID198417590f);
+})();
+function displayChartGeoChartID198417590f() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID198417590f"></script>
+<!-- divChart -->
+<div id="GeoChartID198417590f" style="width: 1000; height: 400;">
+
+</div>
+<p>Since graduate degrees had the highest correlation, we decided to make a geoChart showing the amount of graduate degrees by state. This graph shows us that California, Texas, and then states in the Midwest and East Coast had the cities with the highest percentages of graduate degrees.</p>
+</div>
+</div>
+<div id="plot-the-cities-on-a-map-of-the-us.-5-points" class="section level2">
+<h2>2. Plot the cities on a map of the US. (5 points)</h2>
+<p>Please allow for city markers to load.</p>
+<pre class="r"><code>GeoCities &lt;- gvisGeoChart(bcities,locationvar = &quot;City&quot;, sizevar = &quot;Population&quot;,options=list(region=&quot;US&quot;, resolution = &quot;provinces&quot;, width=1000,height=400,displayMode=&quot;markers&quot;))
+plot(GeoCities)</code></pre>
+<!-- GeoChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:32 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataGeoChartID1986cfde59 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Los Angeles",
+3811518
+],
+[
+"Anchorage",
+297018
+],
+[
+"Omaha",
+416855
+],
+[
+"St. Louis",
+304219
+],
+[
+"Cleveland",
+396441
+],
+[
+"Chesapeake",
+223454
+],
+[
+"Phoenix",
+1418687
+],
+[
+"Scottsdale",
+214770
+],
+[
+"Reno",
+225561
+],
+[
+"Dallas ",
+1199739
+],
+[
+"Virginia Beach",
+438243
+],
+[
+"Charlotte",
+745596
+],
+[
+"Tulsa",
+395176
+],
+[
+"Indianapolis",
+831943
+],
+[
+"Colorado Springs",
+421350
+],
+[
+"Tampa ",
+340509
+],
+[
+"Lincoln",
+259068
+],
+[
+"San Jose",
+956368
+],
+[
+"Rochester",
+213178
+],
+[
+"Oakland",
+401036
+],
+[
+"San Antonio",
+1365256
+],
+[
+"Baltimore",
+612701
+],
+[
+"Chicago",
+2679998
+],
+[
+"Arlington",
+208143
+],
+[
+"Milwaukee",
+593545
+],
+[
+"Lexington",
+299520
+],
+[
+"Philadelphia",
+1522648
+],
+[
+"Oklahoma City",
+588053
+],
+[
+"Houston",
+2131940
+],
+[
+"Cincinatti",
+292050
+],
+[
+"Columbus ",
+796520
+],
+[
+"Honolulu",
+399124
+],
+[
+"Raleigh",
+405462
+],
+[
+"Madison",
+231999
+],
+[
+"Atlanta",
+410606
+],
+[
+"Kansas City",
+458064
+],
+[
+"New Orleans",
+349773
+],
+[
+"Nashvile",
+603394
+],
+[
+"Minneapolis",
+388229
+],
+[
+"Pittsburgh",
+308090
+],
+[
+"St. Paul",
+288263
+],
+[
+"San Diego ",
+1319558
+],
+[
+"Austin",
+797215
+],
+[
+"New York",
+8110206
+],
+[
+"Denver",
+597466
+],
+[
+"Portland",
+598205
+],
+[
+"Boston",
+615462
+],
+[
+"Washington",
+607731
+],
+[
+"Seattle",
+624070
+],
+[
+"San Francisco",
+808854
+] 
+];
+data.addColumn('string','City');
+data.addColumn('number','Population');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartGeoChartID1986cfde59() {
+var data = gvisDataGeoChartID1986cfde59();
+var options = {};
+options["width"] = 1000;
+options["height"] = 400;
+options["region"] = "US";
+options["resolution"] = "provinces";
+options["displayMode"] = "markers";
+
+    var chart = new google.visualization.GeoChart(
+    document.getElementById('GeoChartID1986cfde59')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "geochart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartGeoChartID1986cfde59);
+})();
+function displayChartGeoChartID1986cfde59() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID1986cfde59"></script>
+<!-- divChart -->
+<div id="GeoChartID1986cfde59" style="width: 1000; height: 400;">
+
+</div>
+<p>For this map graph, we used markers, which allowed us to identify the city within the exact location. The cities with higher populations appear to be near water, which can stem from many factors but is likely heavily influenced by immigration. We encountered one limitation with this chart, being that it was not able to identify “Washington” as “Washington D.C.”. Instead it placed the marker in Washington state.</p>
+</div>
+<div id="identify-the-states-in-which-these-cities-lie-and-then-develop-a-choropleth-that-colors-different-states-based-on-the-number-of-cities-that-are-present-in-each-state.-5-points" class="section level2">
+<h2>3. Identify the States in which these cities lie and then develop a choropleth that colors different states based on the number of cities that are present in each State. (5 points)</h2>
+<pre class="r"><code>Ccount=bcities%&gt;%group_by(City)%&gt;%summarize(number=length(City))</code></pre>
+<pre class="r"><code>Ccount$States &lt;-1:50</code></pre>
+<pre class="r"><code>Ccount$States &lt;- c(1:50)
+Ccount$States=recode(1:50, &quot;Alaska&quot;,&quot;Washington DC&quot;, &quot;Georgia&quot;, &quot;Texas&quot;,&quot;Maryland&quot;, &quot;Massachusets&quot;, &quot;North Carolina&quot;, &quot;Maryland&quot;, &quot;Illinois&quot;, &quot;Ohio&quot;, &quot;Ohio&quot;, &quot;Colorado&quot;,&quot;Ohio&quot;, &quot;Texas&quot;, &quot;Colorado&quot;, &quot;Hawaii&quot;, &quot;Texas&quot;, &quot;Indiana&quot;, &quot;Missouri&quot;, &quot;Kentucky&quot;, &quot;Nebraska&quot;, &quot;California&quot;, &quot;Wisconsin&quot;,&quot;Wisconsin&quot;, &quot;Minnesota&quot;, &quot;Tennesee&quot;, &quot;Louisiana&quot;, &quot;New York&quot;, &quot;California&quot;, &quot;Oklahoma&quot;,&quot;Nebraska&quot;, &quot;Pennsylvania&quot;, &quot;Arizona&quot;, &quot;Pennsylvania&quot;, &quot;Oregon&quot;, &quot;North Carolina&quot;, &quot;Nevada&quot;, &quot;New York&quot;, &quot;Texas&quot;, &quot;California&quot;, &quot;California&quot;, &quot;California&quot;, &quot;Arizona&quot;, &quot;Washington&quot;, &quot;Missouri&quot;, &quot;Minnesota&quot;, &quot;Florida&quot;, &quot;Oklahoma&quot;, &quot;Virginia&quot;, &quot;Washington DC&quot;)</code></pre>
+<pre class="r"><code>Citycount=Ccount%&gt;%group_by(States)%&gt;%summarize(number=length(City))</code></pre>
+<pre class="r"><code>Numcities &lt;- gvisGeoChart(Citycount, &quot;States&quot;, &quot;number&quot;,
+                          options=list(region=&quot;US&quot;, displayMode=&quot;regions&quot;, resolution=&quot;provinces&quot;,width=1000, height=400))
+plot(Numcities)</code></pre>
+<!-- GeoChart generated in R 3.4.1 by googleVis 0.6.2 package -->
+<!-- Tue Oct 31 14:03:33 2017 -->
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataGeoChartID198290e5a89 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Alaska",
+1
+],
+[
+"Arizona",
+2
+],
+[
+"California",
+5
+],
+[
+"Colorado",
+2
+],
+[
+"Florida",
+1
+],
+[
+"Georgia",
+1
+],
+[
+"Hawaii",
+1
+],
+[
+"Illinois",
+1
+],
+[
+"Indiana",
+1
+],
+[
+"Kentucky",
+1
+],
+[
+"Louisiana",
+1
+],
+[
+"Maryland",
+2
+],
+[
+"Massachusets",
+1
+],
+[
+"Minnesota",
+2
+],
+[
+"Missouri",
+2
+],
+[
+"Nebraska",
+2
+],
+[
+"Nevada",
+1
+],
+[
+"New York",
+2
+],
+[
+"North Carolina",
+2
+],
+[
+"Ohio",
+3
+],
+[
+"Oklahoma",
+2
+],
+[
+"Oregon",
+1
+],
+[
+"Pennsylvania",
+2
+],
+[
+"Tennesee",
+1
+],
+[
+"Texas",
+4
+],
+[
+"Virginia",
+1
+],
+[
+"Washington",
+1
+],
+[
+"Washington DC",
+2
+],
+[
+"Wisconsin",
+2
+] 
+];
+data.addColumn('string','States');
+data.addColumn('number','number');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartGeoChartID198290e5a89() {
+var data = gvisDataGeoChartID198290e5a89();
+var options = {};
+options["width"] = 1000;
+options["height"] = 400;
+options["region"] = "US";
+options["displayMode"] = "regions";
+options["resolution"] = "provinces";
+
+    var chart = new google.visualization.GeoChart(
+    document.getElementById('GeoChartID198290e5a89')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "geochart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartGeoChartID198290e5a89);
+})();
+function displayChartGeoChartID198290e5a89() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+<!-- jsChart -->
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID198290e5a89"></script>
+<!-- divChart -->
+<div id="GeoChartID198290e5a89" style="width: 1000; height: 400;">
+
+</div>
+<p>This map shows us that California and Texas have the most cities within the “top 50 cities” list, having 5 and 4 cities, respectively. It also seems that states in the Midwest and east coast have a couple more cities than other regions, which one could infer means that these are more popular regions of the United States.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion:</h2>
+<p>It seems that the cities that had the highest amount of graduate degrees and the median household income had a strong correlation to the rank of the city. The regions with the highest amount of ranking cities were in the Midwest and East Cost, and then in California. There were also high percentages in Seattle and Portland.</p>
+<p>Factors such as restaurants, bars, and other attractions had little to do with the ranking of the city, because if you have a low household income, it’s unlikely that you frequent these locations.</p>
+<p>Some of the limitations we had in this assignment included: Washington D.C. appearing as a city in Washington State rather than a city in D.C. Also, the inability to find a graph that would better shows the correlations. We felt that the line graph was effective overall, but we could have found a graph type that would display an ordinal variable such as “Rank” more clearly.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
